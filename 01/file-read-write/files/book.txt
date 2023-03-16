@@ -1,0 +1,6 @@
+The type argument is only used on Windows platforms and can be one 
+of 'dir', 'file', or 'junction'. If the type argument is not a string,
+ Node.js will autodetect target type and use 'file' or 'dir'. If the t
+ arget does not exist, 'file' will be used. Windows junction points req
+ uire the destination path to be absolute. When using 'junction', th
+ e target argument will aut
