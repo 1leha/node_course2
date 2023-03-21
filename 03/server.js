@@ -59,7 +59,7 @@ app.use('/api/users/:id', async (req, res, next) => {
  */
 app.post('/api/users', async (req, res) => {
   try {
-    const { name, year } = req.body;
+    const { name, birthyear } = req.body;
 
     const dataFromDB = await fs.readFile('./models.json');
 
@@ -67,7 +67,7 @@ app.post('/api/users', async (req, res) => {
 
     const newUser = {
       name,
-      year,
+      birthyear,
       id: uuid(),
     };
 

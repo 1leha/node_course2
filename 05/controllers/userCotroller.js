@@ -13,7 +13,7 @@ exports.createUser = catchAsync(async (req, res, next) => {
 });
 
 exports.getUsersList = catchAsync(async (req, res) => {
-  // const users = await User.find().select('name email year');
+  // const users = await User.find().select('name email birthyear');
   // const users = await User.find().select('+password');
   const users = await User.find().select('-__v');
 

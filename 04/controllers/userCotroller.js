@@ -9,7 +9,7 @@ exports.createUser = catchAsync(async (req, res, next) => {
 
   if (error) return next(new AppError(400, error.details[0].message));
 
-  const { name, year } = value;
+  const { name, birthyear } = value;
 
   const dataFromDB = await fs.readFile('./models.json');
 
@@ -17,7 +17,7 @@ exports.createUser = catchAsync(async (req, res, next) => {
 
   const newUser = {
     name,
-    year,
+    birthyear,
     id: uuid(),
   };
 

@@ -24,3 +24,13 @@ exports.updateUserDataValidator = (data) => Joi.object()
     role: Joi.string().valid(...Object.values(userRolesEnum)),
   })
   .validate(data);
+
+exports.signupUserDataValidator = (data) => Joi.object()
+  .options({ abortEarly: false })
+  .keys({
+    name: Joi.string().min(3).max(20).required(),
+    email: Joi.string().email().required(),
+    birthyear: Joi.number().min(1940).max(2023).required(),
+    password: Joi.string().regex(PASSWD_REGEX).required(),
+  })
+  .validate(data);

@@ -9,7 +9,7 @@ exports.createUserDataValidator = (data) => Joi.object()
   .keys({
     name: Joi.string().min(3).max(20).required(),
     email: Joi.string().email().required(),
-    year: Joi.number().min(1940).max(2023).required(),
+    birthyear: Joi.number().min(1940).max(2023).required(),
     password: Joi.string().regex(PASSWD_REGEX).required(),
     role: Joi.string().valid(...Object.values(userRolesEnum)),
   })
